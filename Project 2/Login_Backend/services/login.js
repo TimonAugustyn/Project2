@@ -14,7 +14,7 @@ async function login(user) {
   const password = user.password;
   if (!user || !username || !password) {
     return util.buildResponse(401, {
-      message: 'Both a username and a password are required'
+      message: 'Both a username and a password is required'
     })
   }
 
@@ -31,7 +31,7 @@ async function login(user) {
     username: dynamoUser.username,
     name: dynamoUser.name
   }
-  const token = auth.generateToken(userInfo)
+  const token = authorize.generateToken(userInfo)
   const response = {
     user: userInfo,
     token: token
