@@ -5,6 +5,7 @@ import Login from "./Login";
 import PremiumContent from "./PremiumContent";
 import PublicRoute from "./routes/PublicRoute";
 import PrivateRoute from "./routes/PrivateRoute";
+//import Display from "./display";
 import React, { useState, useEffect } from "react";
 import { getUser, getToken, setUserSession, resetUserSession } from "./service/AuthService";
 import axios from "axios";
