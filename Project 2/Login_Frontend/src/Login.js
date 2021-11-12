@@ -27,7 +27,7 @@ const Login = (props) => {
 
     axios.post(loginAPIUrl, requestBody, requestConfig).then((response) => {
       setUserSession(response.data.user, response.data.token);
-      props.history.push('/premium-content');
+      props.history.push('.../UploadImage/client/src/components/Home');
     }).catch((error) => {
       if (error.response.status === 401 || error.response.status === 403) {
         setErrorMessage(error.response.data.message);
