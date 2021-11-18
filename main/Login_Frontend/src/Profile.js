@@ -41,7 +41,11 @@ const Profile = (props) => {
       <form onSubmit={submit}>
         <input onChange={fileSelected} type="file" accept="image/*"></input>
         <input value={description} onChange={e => setDescription(e.target.value)} type="text"></input>
+<<<<<<< HEAD
+        <button className="btn" type="submit">Submit</button>
+=======
         <button type="submit">Submit</button>
+>>>>>>> 35cffa1ee2586e0525c2ff41fc98cc3bae63fdd4
       </form>
 
       { images.map( image => (
@@ -51,13 +55,22 @@ const Profile = (props) => {
       ))}
       <div>
       Hello {name}! You are logged in and can start sharing your images! <br/>
+<<<<<<< HEAD
+      <input className="btn" type="button" value="Logout" onClick={logoutHandler}/>
+    </div>
+=======
       <input type="button" value="Logout" onClick={logoutHandler}/>
     </div>
 
       <img src="7a3f67c54cc7b85f460620451d64b105"></img>
 
+>>>>>>> 35cffa1ee2586e0525c2ff41fc98cc3bae63fdd4
     </div>
   );
 }
 
 export default Profile;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 35cffa1ee2586e0525c2ff41fc98cc3bae63fdd4

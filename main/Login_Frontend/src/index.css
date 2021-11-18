@@ -1,3 +1,47 @@
+<<<<<<< HEAD
+body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  .header {
+         margin: 0 1em 0 1em;
+         color: white; font: bold 24px Helvetica, Arial, Sans-Serif;
+		     text-shadow: 1px 1px #02a2fe, 2px 2px #02a2fe, 3px 3px #02a2fe;
+		     -webkit-transition: all 0.12s ease-out;
+		     -moz-transition: all 0.12s ease-out;
+		     -o-transition: all 0.12s ease-out;
+  }
+  
+  .header a {
+         margin: 0 1em 0 1em;
+         color: white; font: bold 24px Helvetica, Arial, Sans-Serif;
+		     text-shadow: 1px 1px #02a2fe, 2px 2px #02a2fe, 3px 3px #02a2fe;
+		     -webkit-transition: all 0.12s ease-out;
+		     -moz-transition: all 0.12s ease-out;
+		     -o-transition: all 0.12s ease-out;
+  }
+  a:hover {
+    text-shadow: 1px 1px #02a2fe, 2px 2px #02a2fe, 3px 3px #02a2fe, 4px 4px #02a2fe, 5px 5px #02a2fe, 6px 6px #02a2fe;
+}
+  
+  .content {
+    margin-left: 2em;
+    font-size: 1.5em;
+  }
+  
+  .message {
+    color: red;
+    font-size: 0.7em;
+  
+=======
 body{
   display: flex;
   justify-content: center;
@@ -41,4 +85,5 @@ body{
     border: 1px solid black;
     background-position: center;
     background-size: cover;
+>>>>>>> 35cffa1ee2586e0525c2ff41fc98cc3bae63fdd4
   }
