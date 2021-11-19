@@ -1,21 +1,19 @@
-<<<<<<< HEAD
 import React, {useState} from 'react';
 import axios from 'axios';
-import { setUserSession } from './service/AuthService'
+import { setSession } from './service/AuthentService'
 const loginAPIUrl = 'https://qumju8n29l.execute-api.us-east-2.amazonaws.com/prod/login';
 
 const Login = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(null);
-
+  const [errorMessage, setError] = useState(null);
   const submitHandler = (event) => {
     event.preventDefault();
     if (username.trim() === '' || password.trim() === '') {
-      setErrorMessage('Username or password is missing.');
+      setError('Username or password is missing.');
       return;
     }
-    setErrorMessage(null);
+    setError(null);
     const requestConfig = {
       headers: {
         'x-api-key': 'neKKXeqoAs7i724un3NIOaZIm08rP8v37uT8lb4b'
@@ -25,15 +23,14 @@ const Login = (props) => {
       username: username,
       password: password
     }
-
     axios.post(loginAPIUrl, requestBody, requestConfig).then((response) => {
-      setUserSession(response.data.user, response.data.token);
+      setSession(response.data.user, response.data.token);
       props.history.push('./profile');
     }).catch((error) => {
       if (error.response.status === 401 || error.response.status === 403) {
-        setErrorMessage(error.response.data.message);
+        setError(error.response.data.message);
       } else {
-        setErrorMessage('The server is offline. Please try again at a later time.');
+        setError('The server is offline. Please try again at a later time.');
       }
     })
   }
@@ -51,60 +48,4 @@ const Login = (props) => {
   )
 }
 
-=======
-import React, {useState} from 'react';
-import axios from 'axios';
-import { setUserSession } from './service/AuthService'
-const loginAPIUrl = 'https://qumju8n29l.execute-api.us-east-2.amazonaws.com/prod/login';
-
-const Login = (props) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(null);
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-    if (username.trim() === '' || password.trim() === '') {
-      setErrorMessage('Username or password is missing.');
-      return;
-    }
-    setErrorMessage(null);
-    const requestConfig = {
-      headers: {
-        'x-api-key': 'neKKXeqoAs7i724un3NIOaZIm08rP8v37uT8lb4b'
-      }
-    }
-    const requestBody = {
-      username: username,
-      password: password
-    }
-
-    axios.post(loginAPIUrl, requestBody, requestConfig).then((response) => {
-      setUserSession(response.data.user, response.data.token);
-      props.history.push('./premium-content');
-      //window.location.assign("/index.html");
-      //window.location.assign("/temp.html");
-    }).catch((error) => {
-      if (error.response.status === 401 || error.response.status === 403) {
-        setErrorMessage(error.response.data.message);
-      } else {
-        setErrorMessage('The server is offline. Please try again at a later time.');
-      }
-    })
-  }
-
-  return (
-    <div>
-      <form onSubmit={submitHandler}>
-        <h5>Login</h5>
-        username: <input type="text" value={username} onChange={event => setUsername(event.target.value)} /> <br/>
-        password: <input type="password" value={password} onChange={event => setPassword(event.target.value)} /> <br/>
-        <input type="submit" value="Login" />
-      </form>
-      {errorMessage && <p className="message">{errorMessage}</p>}
-    </div>
-  )
-}
-
->>>>>>> 35cffa1ee2586e0525c2ff41fc98cc3bae63fdd4
 export default Login;

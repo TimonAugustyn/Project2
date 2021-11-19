@@ -1,0 +1,66 @@
+:root {
+  background-image: url("pexels-pixabay-326311.jpg");
+  font-size: 62.5%;
+}
+
+* {
+  color: #ffffff;
+  font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+	letter-spacing:0.1em;
+	text-align:center;
+	margin: 40px auto;
+	text-transform: lowercase;
+	line-height: 145%;
+	font-size: 14pt;
+	font-variant: small-caps
+}
+
+
+.btn {
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 0;
+  width: 20rem;
+  text-align: center;
+  border: 0.1rem solid #ffffff;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  margin-bottom: 1rem;
+  width: 20rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  border: none;
+  box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+}
+
+input::placeholder {
+  color: #aaa;
+}

@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 import React from 'react';
-
+/////////////////////////////////////
 const Home = () => {
   return (
     <div>
@@ -15,16 +14,4 @@ const Home = () => {
   )
 }
 
-=======
-import React from 'react';
-
-const Home = () => {
-  return (
-    <div>
-      This is the home page!
-    </div>
-  )
-}
-
->>>>>>> 35cffa1ee2586e0525c2ff41fc98cc3bae63fdd4
 export default Home;

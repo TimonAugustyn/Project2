@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 :root {
   background-image: url("pexels-pixabay-326311.jpg");
   font-size: 62.5%;
@@ -65,16 +64,3 @@ input {
 input::placeholder {
   color: #aaa;
 }
-=======
-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
-  }
-  
-  form > * {
-    margin: 5px 0;
-    box-sizing: border-box;
-  }
->>>>>>> 35cffa1ee2586e0525c2ff41fc98cc3bae63fdd4

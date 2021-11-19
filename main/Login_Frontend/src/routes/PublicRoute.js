@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { getToken } from '../service/AuthService';
-
+import { getToken } from '../service/AuthentService';
+/////////////////////////////////////
 const PublicRoute = ({ component: Component, ...rest}) => {
   return (
     <Route 
@@ -15,22 +14,4 @@ const PublicRoute = ({ component: Component, ...rest}) => {
   )
 }
 
-=======
-import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
-import { getToken } from '../service/AuthService';
-
-const PublicRoute = ({ component: Component, ...rest}) => {
-  return (
-    <Route 
-      {...rest}
-      render={props => {
-        return !getToken() ? <Component {...props} />
-        : <Redirect to={{ pathname: '/premium-content'}} />
-      }}
-    />
-  )
-}
-
->>>>>>> 35cffa1ee2586e0525c2ff41fc98cc3bae63fdd4
 export default PublicRoute
