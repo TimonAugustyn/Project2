@@ -26,6 +26,7 @@ async function register(userInfo) {
             message: 'Username is already taken. Please select a new username.'
         })
     }
+/////////////////////////////////////
     const user = {
         name: name,
         email: email,
