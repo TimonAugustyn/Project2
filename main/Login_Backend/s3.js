@@ -12,12 +12,12 @@ const s3 = new S3({
   secretAccessKey
 })
 //upload the image
-function uploadImage(image) {
-  const fileStream = fs.createReadStream(image.path)
+function uploadImage(file) {
+  const fileStream = fs.createReadStream(file.path)
   const uploadDetails = {
     Bucket: bucketName,
     Body: fileStream,
-    Key: image.imagename,
+    Key: file.filename,
     Metadata: {DATE: today.toLocaleDateString("en-US")}
   }
   return s3.upload(uploadDetails).promise()
@@ -25,9 +25,9 @@ function uploadImage(image) {
 
 exports.uploadImage = uploadImage
 //download the image
-function getFileStream(imageKey) {
+function getFileStream(filekey) {
   const downloadDetails = {
-    Key: imageKey,
+    Key: filekey,
     Bucket: bucketName
   }
   return s3.getObject(downloadDetails).createReadStream()

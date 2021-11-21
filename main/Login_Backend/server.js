@@ -24,4 +24,4 @@ app.post('/images', upload.single('image'), async (req, res) => {
   res.send({imagePath: `/images/${result.Key}`})
 })
 
-app.listen(5000, () => console.log("listening on port 5000"))
+app.listen(5000, () => console.log("Server has been started"))
