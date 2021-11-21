@@ -27,8 +27,16 @@ const Register = () => {
       name: name,
       password: password
     }
+    function ValPass(password) {
+    const Length = password.length >= 5
+    let Letters = /[a-zA-Z]/g.test(password)
+    let Numbers = /[0-9]/g.test(password)
+    return Numbers && Letters && Length
+  }
+  if (ValPass) {
     axios.post(regUrl, reqBody, reqConf).then(response => {
       setMessage('Successfully Registered');
+      console.log("Valid password")
     }).catch(error => {
       if (error.response.status === 401 || error.response.status === 403) {
         setMessage(error.response.data.message);
@@ -36,6 +44,9 @@ const Register = () => {
         setMessage('The server is down. Please try again after some time has passed.');
       }
     })
+  } else {
+    setMessage("Invalid Password")
+  }
   }
   return (
     <div>
